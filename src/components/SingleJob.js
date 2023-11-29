@@ -2,7 +2,7 @@ import React from "react";
 
 import Card from "../UI/Card";
 
-const SingleJob = ({title,description}) => {
+const SingleJob = ({title,description,location}) => {
   return (
    
     <Card >
@@ -11,6 +11,7 @@ const SingleJob = ({title,description}) => {
         <div>
           <p>{description}</p>
         </div>
+        <div>{location}</div>
         <div>
           <button>Apply</button>
         </div>
