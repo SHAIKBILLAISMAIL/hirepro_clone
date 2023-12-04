@@ -53,10 +53,12 @@ const HomePage = () => {
     // Filter jobs based on selected categories and locations
     const newFilteredJobs = DUMMY_JOBS.filter((job) => {
       const categoryFilter =
-        selectedCategories.length === 0 || selectedCategories.includes(job.category);
+        selectedCategories.length === 0 ||
+        selectedCategories.includes(job.category);
  
       const locationFilter =
-        selectedLocations.length === 0 || selectedLocations.includes(job.location);
+        selectedLocations.length === 0 ||
+        selectedLocations.includes(job.location);
  
       const searchFilter =
         job.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
