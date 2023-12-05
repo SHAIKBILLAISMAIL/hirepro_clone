@@ -3,7 +3,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Card from '../UI/Card';
  
-const SingleJob = ({ title, description, location }) => {
+const SingleJob = ({ title, description, location, onViewDescription }) => {
   return (
     <Card>
       <div className="single-job">
@@ -12,6 +12,9 @@ const SingleJob = ({ title, description, location }) => {
         </div>
         <div>
           <p>{description}</p>
+        </div>
+        <div>
+          <button onClick={onViewDescription}>View Description</button>
         </div>
         <div>{location}</div>
         <div>

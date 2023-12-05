@@ -33,12 +33,17 @@ const RegistrationForm = () => {
         <div className="instruction-list">
           <h3>Instructions:</h3>
           <ol>
-            {/* ... existing instructions ... */}
+            <li>Your face should be visible in the camera.</li>
+            <li>Face should be clearly visible and well lit(i.e., not dark).</li>
+            <li>The background should be plain(i.e., no clutter)</li>
+            <li>No other person should be in the photograph</li>
             </ol>
             </div>
             </div>
-            </div>
+          
             
+            <h4>Please complete the security verification and click next.</h4>
+            <h4>Captcha</h4>
               <ReCAPTCHA
                 sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"
                 onChange={handleCaptchaChange}
@@ -48,6 +53,8 @@ const RegistrationForm = () => {
               <button className="next-button" onClick={handleNext}>
                 Next
               </button>
+              </div>
+              
             
           
        

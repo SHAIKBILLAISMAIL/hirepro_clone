@@ -52,6 +52,9 @@
     display: flex;
     justify-content: center;
   }
+  .captcha {
+    text-align: center;
+  }
   
   /* Optional: Add additional styling to the ReCAPTCHA component */
   /* .g-recaptcha {
