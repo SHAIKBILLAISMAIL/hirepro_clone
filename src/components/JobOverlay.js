@@ -4,6 +4,9 @@ import "./JobOverlay.css"; // Create a CSS file for styling
  
 const JobOverlay = ({ role, onClose }) => {
   // Map job roles to their respective descriptions
+  const lowercaseRole = role && typeof role === 'string' && role.toLowerCase();
+  console.log('Role in JobOverlay:', role.title); // Add this line to log the role
+
   const jobDescriptions = {
     frontend: <p> Our company is growing rapidly and is searching for experienced candidates for the position of front-end developer. Please review the list of responsibilities and qualifications. While this is our ideal list, we will consider candidates that do not necessarily have all of the qualifications, but have sufficient experience and talent.
  
@@ -120,8 +123,8 @@ has context menu,
   return (
     <div className="job-overlay">
       <div className="overlay-content">
-      <h2>{role && typeof role === 'string' && role.toUpperCase()} Developer</h2>
-        <p>{jobDescriptions[role]}</p>
+      <h2>{role && typeof role.title === 'string' && role.title} Developer</h2>
+        <p>{jobDescriptions[lowercaseRole]}</p>
         <button onClick={onClose}>Close</button>
       </div>
     </div>

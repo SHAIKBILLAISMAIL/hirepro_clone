@@ -57,6 +57,7 @@ const HomePage = () => {
   const [selectedJob, setSelectedJob] = useState(null);
  
   const handleViewDescription = (job) => {
+    console.log('Viewing description for job:', job);
     setSelectedJob(job);
   };
 
@@ -90,6 +91,7 @@ const HomePage = () => {
     setSearchTerm(term);
   };
 
+
   const handleFilter = (categories, locations) => {
     setSelectedCategories(categories);
     setSelectedLocations(locations);
@@ -119,7 +121,7 @@ const HomePage = () => {
             <SingleJob
               key={index}
               title={job.title}
-              description={job.description}
+              description={job.category}
               location={job.location}
               onViewDescription={() => handleViewDescription(job)}
             />
@@ -127,7 +129,7 @@ const HomePage = () => {
         </div>
       </div>
       {selectedJob && (
-        <JobOverlay role={selectedJob} onClose={handleCloseOverlay} />
+        <JobOverlay role={selectedJob.category} onClose={handleCloseOverlay} />
       )}
     </>
   );

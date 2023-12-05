@@ -11,9 +11,6 @@ const SingleJob = ({ title, description, location, onViewDescription }) => {
           <p>{title}</p>
         </div>
         <div>
-          <p>{description}</p>
-        </div>
-        <div>
           <button onClick={onViewDescription}>View Description</button>
         </div>
         <div>{location}</div>
