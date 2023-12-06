@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import Card from "../UI/Card";
 import "./HomePage.css";
@@ -93,32 +92,3 @@ const CheckBoxItems = ({ onFilter }) => {
 };
  
 export default CheckBoxItems;
- 
- 
- 
- 
- 
- 
- 
- // <div className="filters">
-    //       <Card className="filter">
-    //         <h5>Categories</h5>
-    //         <ul>
-    //           <li><label htmlFor="frontend"><input id="frontend" type="checkbox"/>Frontend</label></li>
-    //           <li><label htmlFor="backend"><input id="backend" type="checkbox"/>Backend</label></li>
-    //           <li><label htmlFor="fullstack"><input id="fullstack" type="checkbox"/>Full Stack</label></li>
-    //           <li><label htmlFor="java"><input id="java" type="checkbox"/>Java</label></li>
-    //           <li><label htmlFor="cloud"><input id="cloud" type="checkbox"/>Cloud</label></li>
-    //         </ul>
-    //       </Card>
-    //       <Card className="filter">
-    //         <h5>Location</h5>
-    //         <ul>
-    //           <li><label htmlFor="Hyderabad"><input id="hyderabad" type="checkbox"/>Hyderabad</label></li>
-    //           <li><label htmlFor="bangalore"><input id="bangalore" type="checkbox"/>Bangalore</label></li>
-    //           <li><label htmlFor="chennai"><input id="chennai" type="checkbox"/>Chennai</label></li>
-    //           <li><label htmlFor="mumbai"><input id="mumbai" type="checkbox"/>Mumbai</label></li>
-    //           <li><label htmlFor="delhi"><input id="delhi" type="checkbox"/>Delhi</label></li>
-    //         </ul>
-    //       </Card>
-    //     </div>

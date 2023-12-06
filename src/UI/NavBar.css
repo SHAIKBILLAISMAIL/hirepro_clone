@@ -1,31 +1,16 @@
 .navbar {
   display: flex;
   justify-content: space-around;
-  background-color: rgb(91, 62, 158);
+  background-color: rgb(255, 255, 255);
   color: white;
   padding: 15px;
-
-
-}
-.firstletter {
-    color: black;
-    
-}
-.middleletter {
-    color: orange;
-    
-}
-.lastletter {
-    color: black;
-  
 }
 
 .name {
     width: 30%;
-    font-size:30px;
+    font-size:x-large;
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif ;
-    font-weight: 1000;
-    
+    font-weight: 500;
    
 }
 
