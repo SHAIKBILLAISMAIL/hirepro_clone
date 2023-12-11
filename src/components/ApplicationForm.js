@@ -1,7 +1,11 @@
-import React, { useState } from 'react';
-import ResumeUpload from './ResumeUpload';
-import './ApplicationForm.css';
+
  
+ 
+import React, { useState } from 'react';
+import ResumeUpload from "../ApplicationComponent/ResumeUpload"
+ import Gender from "../ApplicationComponent/Gender";
+ 
+//import DateComp from"../comp/DateComp"
 const ApplicationForm = () => {
   const [formData, setFormData] = useState({
     firstName: '',
@@ -12,16 +16,8 @@ const ApplicationForm = () => {
     dateOfBirth: '',
     programmingLanguages: '',
     skills: '',
-    currentCompany: '',
-    linkedInURL: '',
-    totalExperience: '',
-    noticePeriod: '',
-    currentCTC: '',
-    expectedCTC: '',
-    currentLocation: '',
-    additionalInformation: '',
   });
-  
+ 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({
@@ -38,10 +34,13 @@ const ApplicationForm = () => {
  
   return (
     <div className="application-form-container">
-      <h2 className="application-form-title">Application Form</h2>
+      <h2 className="application-form-title">Apply for this job</h2>
       <form onSubmit={handleSubmit}>
+        <div className='Resume'>
+            <ResumeUpload/>
+        </div>
         <div className="form-group">
-          <label htmlFor="firstName">First Name:</label>
+          <label htmlFor="firstName">First Name</label><br/>
           <input
             type="text"
             id="firstName"
@@ -52,7 +51,7 @@ const ApplicationForm = () => {
         </div>
  
         <div className="form-group">
-          <label htmlFor="lastName">Last Name:</label>
+          <label htmlFor="lastName">Last Name</label><br/>
           <input
             type="text"
             id="lastName"
@@ -61,9 +60,12 @@ const ApplicationForm = () => {
             onChange={handleChange}
           />
         </div>
- 
+ <div className='gender'>
+<label>Gender</label><br/>
+<Gender/>
+ </div>
         <div className="form-group">
-          <label htmlFor="phoneNumber">Phone Number:</label>
+          <label htmlFor="phoneNumber">Phone Number</label><br/>
           <input
             type="tel"
             id="phoneNumber"
@@ -74,7 +76,7 @@ const ApplicationForm = () => {
         </div>
  
         <div className="form-group">
-          <label htmlFor="email">Email:</label>
+          <label htmlFor="email">Email</label><br/>
           <input
             type="email"
             id="email"
@@ -83,108 +85,148 @@ const ApplicationForm = () => {
             onChange={handleChange}
           />
         </div>
- 
-        <div className="form-group">
-          <label htmlFor="address">Address:</label>
-          <textarea
-            id="address"
-            name="address"
-            value={formData.address}
-            onChange={handleChange}
-          />
-        </div>
- 
-        <div className="form-group">
-          <label htmlFor="currentCompany">Current Company:</label>
-          <input
-            type="text"
-            id="currentCompany"
-            name="currentCompany"
-            value={formData.currentCompany}
-            onChange={handleChange}
-          />
-        </div>
-
-        <div className="form-group">
-          <label htmlFor="linkedInURL">LinkedIn URL:</label>
-          <input
-            type="text"
-            id="linkedInURL"
-            name="linkedInURL"
-            value={formData.linkedInURL}
-            onChange={handleChange}
-          />
-        </div>
-        <h3>MANDATE QUESTIONNANRI</h3>
- <div className="form-group">
-   <label htmlFor="Experince">Total Experince:</label>
+       <div>
+        <label>Date of Birth</label><br/>
+        <input type='date'/>
+       </div>
+       <div>
+        <label>Current Salary:</label>
+        <input
+        type="text"
+        />
+        <label>Expected Salary:</label>
+        <input
+        type="text"/>
+       </div>
+       <div>
+        <label>Available To Join (in days)</label><br/>
+        <input
+        type="text"/>
+       </div>
+       <div>
+        <label>Location Preference</label><br/>
+        <input
+        type="text"/>
+       </div>
+       <div>
+        <label>Current Location</label><br/>
+        <input
+        type="text"/>
+       </div>
+       <div>
+       <label htmlFor="Skills">Skills</label><br/>
    <textarea
-     id="Experince"
-     name="Experince"
-     value={formData.Experince}
+     id="Skills"
+     name="Skills"
+     value={formData.Skills }
      onChange={handleChange}
    />
- </div>
+       </div>
+        <h3>Experience Details</h3>
+       <div className='experince'>
+<div>
+    <label>Company Name</label><br/>
+    <input
+    type="text"
+    name="Company Name"
+    value={formData.Companyname}
+    onChange={handleChange}
+    />
+</div>
  
- <div className="form-group">
-   <label htmlFor="Notice Period">Notice Period:</label>
-   <textarea
-     id="Notice Period"
-     name="Notice Period"
-     value={formData.NoticePeriod}
-     onChange={handleChange}
-   />
- </div>
+<div>
+    <label>Job Tittle</label><br/>
+    <input
+    type="text"
+    name="Job Title"
+    value={formData.JobTitle}
+    onChange={handleChange}
+    />
+</div>
+<div>
+    <input type='checkbox'/>
+    <label>Currently working here</label>
+</div>
+<div>
+<label>Date of Joining:</label>
+        <input
+        type='date'
+        value={formData.Course}
+        onChange={handleChange}
+        />
+</div>
+<div>
+<label>Date of Relieving:</label>
+        <input
+        type='date'
+        value={formData.Course}
+        onChange={handleChange}
+        />
+</div>
+<h3>Education Details</h3>
+<div className='Education'>
+<div>
+    <label>Course</label><br/>
+    <input
+    type="text"
+    name="Course"
+    value={formData.Course}
+    onChange={handleChange}
+    />
+</div>
  
+<div>
+    <label>Branch/Specialization</label><br/>
+    <input
+    type="text"
+    name="Beanch"
+    value={formData.Branch}
+    onChange={handleChange}
+    />
+</div>
  
- <div className="form-group">
-   <label htmlFor="Current CTC">Current CTC:</label>
-   <input
-    type='number'
-     id="Current CTC "
-     name="Current CTC"
-     value={formData.CurrentCTC}
-     onChange={handleChange}
-   />
- </div>
+<div>
+<label>Start of Course:</label>
+        <input
+        type='date'
+        value={formData.Course}
+        onChange={handleChange}
+        />
+</div>
+<div>
+<label>End of Course:</label>
+        <input
+        type='date'
+        value={formData.Course}
+        onChange={handleChange}
+        />
+</div>
  
+<div>
+    <label>University/Collage</label><br/>
+    <input
+    type="text"
+    name="Collage"
+    value={formData.Collage}
+    onChange={handleChange}
+    />
+</div>
+</div>
  
- <div className="form-group">
-   <label htmlFor="Expected CTC">Expected CTC:</label>
-   <input
-   type='number'
-     id="Expected CTC"
-     name="Expected CTC"
-     value={formData.ExpectedCTC}
-     onChange={handleChange}
-   />
- </div>
- 
- 
- <div className="form-group">
-   <label htmlFor="Current Location">Current Location:</label>
-   <textarea
-     id="Current Location"
-     name="Current Location"
-     value={formData.CurrentLocation}
-     onChange={handleChange}
-   />
- </div>
- 
-<h3>ADDITIONAL INFORMATION</h3>
- <div className="form-group">
-   
-   <textarea
-     
-   />
- </div>
-
- 
-        <button type="submit">Submit</button>
+<div>
+    <label>Location</label><br/>
+    <input
+    type="text"
+    name="Location"
+    value={formData.locatoin}
+    onChange={handleChange}
+    />
+</div>
+       </div>
+       <div>
+        <button onClick={handleChange}>Submitt</button>
+       </div>
       </form>
-      <div className="resume-upload-container">
-        <ResumeUpload />
-      </div>
     </div>
   );
 };
